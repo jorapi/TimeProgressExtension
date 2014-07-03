@@ -1,0 +1,23 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <string name="app_name">DashClock Time Progress</string>
+    <string name="extension_title">Time Progress</string>
+    <string name="extension_description">Displays the percentage of time passed between two times.</string>
+    <string name="title_settings">Time Progress Settings</string>
+
+    <string name="pref_start"></string>
+    <string name="pref_end"></string>
+    <string name="pref_title"></string>
+    
+    <string name="pref_start_title">Start Time</string>
+    <string name="pref_end_title">End Time</string>
+    <string name="pref_title_title">Event Title</string>
+    <string name="pref_weekday_title">Only on Weekdays</string>
+    <string name="pref_start_default">86400000</string>
+    <string name="pref_end_default">86400000</string>
+    <string name="pref_title_default">Title</string>
+    
+    <string name="set">Set</string>
+    <string name="cancel">Cancel</string>
+    
+</resources>

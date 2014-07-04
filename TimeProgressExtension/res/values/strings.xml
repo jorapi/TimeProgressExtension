@@ -8,14 +8,17 @@
     <string name="pref_start"></string>
     <string name="pref_end"></string>
     <string name="pref_title"></string>
+    <string name="pref_boxes"></string>
     
     <string name="pref_start_title">Start Time</string>
     <string name="pref_end_title">End Time</string>
     <string name="pref_title_title">Event Title</string>
     <string name="pref_weekday_title">Only on Weekdays</string>
+    <string name="pref_boxes_title">Number of Boxes in Progress Bar</string>
     <string name="pref_start_default">86400000</string>
     <string name="pref_end_default">86400000</string>
     <string name="pref_title_default">Title</string>
+    <string name="pref_boxes_default">30</string>
     
     <string name="set">Set</string>
     <string name="cancel">Cancel</string>

@@ -19,6 +19,7 @@ public class TimeProgressExtension extends DashClockExtension {
 	public static final String PREF_END = "pref_end"; 
 	public static final String PREF_TITLE = "pref_title";
 	public static final String PREF_WEEKDAY = "pref_weekday";
+	public static final String PREF_BOXES = "pref_boxes";
 
 	@Override
 	protected void onUpdateData(int arg0) {
@@ -27,11 +28,19 @@ public class TimeProgressExtension extends DashClockExtension {
         String start = sp.getString(PREF_START, getString(R.string.pref_start));
         String end = sp.getString(PREF_END, getString(R.string.pref_end));
         String title = sp.getString(PREF_TITLE, getString(R.string.pref_title));
+        String boxes = sp.getString(PREF_BOXES, getString(R.string.pref_boxes));
+        
+        int boxesInt;
+        try{
+        	boxesInt = Integer.parseInt(boxes);
+        } catch (Exception e){
+        	boxesInt = 30;
+        }
         
         boolean weekday = sp.getBoolean(PREF_WEEKDAY, true);
         
         String createdTitle = createTitle(start, end, weekday);
-        String createdBody = createBody(createdTitle);
+        String createdBody = createBody(createdTitle, boxesInt);
         
         
      // Publish the extension data update.
@@ -90,21 +99,20 @@ public class TimeProgressExtension extends DashClockExtension {
 		return (percInt + "%"); 
 	}
 
-	private String createBody(String percent){
+	private String createBody(String percent, int total){
 		String parsePercent = percent.split("%")[0];
 		if (parsePercent == "") return "";
 		
 		String bar = "[";
 		
 		int per = Integer.parseInt(parsePercent);
-		int total = 69;
 		int ratio = findRatio(per, total);
 		
 		for(int i = 0; i < total; i++){
 			if (i < ratio){
-				bar = bar + "|";
+				bar = bar + "■";
 			} else {
-				bar = bar + " ";
+				bar = bar + "□";
 			}
 		}
 		

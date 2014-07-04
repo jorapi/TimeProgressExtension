@@ -38,6 +38,15 @@
         android:title="@string/pref_end_title"
         android:selectAllOnFocus="true" />
     
+    <EditTextPreference
+        android:key="pref_boxes"
+        android:title="@string/pref_boxes_title"
+        android:defaultValue="@string/pref_boxes_default"
+        android:selectAllOnFocus="true"
+        android:inputType="number"
+        android:singleLine="true"
+        android:maxLines="1" />
+    
     <CheckBoxPreference
         android:key="pref_weekday"
         android:title="@string/pref_weekday_title"

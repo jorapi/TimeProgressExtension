@@ -74,6 +74,19 @@ public class TimeProgressExtension extends DashClockExtension {
 		String[] s2 = s.split(":");
 		String[] e2 = e.split(":");
 		
+		//Check to make sure the split worked, if not, default out and say fuck it.
+		if (s2.length != 2){
+			s2 = new String[2];
+			s2[0] = "0";
+			s2[1] = "0";
+		}
+		if (e2.length != 2){ 
+			e2 = new String[2];
+			e2[0] = "0";
+			e2[1] = "0";
+		}
+		
+		
 		start.set(0, Integer.parseInt(s2[1]), Integer.parseInt(s2[0]), now.monthDay, now.month, now.year);
 		end.set(0, Integer.parseInt(e2[1]), Integer.parseInt(e2[0]), now.monthDay, now.month, now.year);
 		

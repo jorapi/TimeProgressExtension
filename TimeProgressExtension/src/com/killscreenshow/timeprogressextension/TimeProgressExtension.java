@@ -107,7 +107,7 @@ public class TimeProgressExtension extends DashClockExtension {
 		double percentage = ((double)(nowMil - startMil) / (double)(endMil - startMil));
 		Log.d("percentage", percentage + "");
 		
-		int percInt = (int) (percentage * 100);
+		int percInt = Math.round((float) (percentage * 100));
 		
 		return (percInt + "%"); 
 	}
@@ -135,6 +135,6 @@ public class TimeProgressExtension extends DashClockExtension {
 	
 	private int findRatio(int top, int total){
 		float temp = (top * total)/100;
-		return (int)temp;
+		return Math.round(temp);
 	}
 }
